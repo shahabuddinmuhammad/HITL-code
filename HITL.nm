@@ -226,7 +226,7 @@ module operator
 endmodule
 
 
-// UAV MODEL
+// UAV MODEL, ADAPTED FROM https://www.prismmodelchecker.org/casestudies/human-uav.php
 module UAV
 	// UAV positions:
 	// inside a waypoint: w!=0, a=0, r=0
