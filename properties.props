@@ -1,0 +1,24 @@
+const int T;
+
+// mission1 (fig 4) of UAV paper
+R{"time"}min=? [ F stop ]
+
+multi(R{"time"}min=? [ C ], R{"ROZ"}min=? [ C ])
+
+// works with DTMC, gives 0 with MDP
+R{"ROZ"}min=? [ C<=T ]
+
+// works with DTMC
+R{"time"}min=? [ C<=T ]
+
+R{"goodAnalysis"}max=? [ C<=T ]
+
+R{"badAnalysis"}max=? [ C<=T ]
+
+100*R{"goodAnalysis"}max=? [ C<=T ]/(R{"goodAnalysis"}max=? [ C<=T ]+R{"badAnalysis"}max=? [ C<=T ])
+
+Pmax=? [ F<=T stop ]
+
+// use mission 3 for this
+multi(R{"time"}min=? [ C ], Pmax=? [ F stop ])
+
